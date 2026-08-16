@@ -6,7 +6,7 @@ const GAMES_DATABASE = [
     id: 'mario-nes',
     title: 'Super Mario Bros',
     platform: 'NES',
-    core: 'nes',
+    core: 'fceumm',
     romPath: '/roms/super_mario_bros.nes',
     thumbnail: 'https://placehold.co/300x200/red/white?text=Super+Mario+Bros'
   },
