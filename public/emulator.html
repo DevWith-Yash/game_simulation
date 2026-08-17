@@ -21,18 +21,21 @@
 <body>
   <div id="game"></div>
 
-  <script type="text/javascript">
-    // Extract query parameters from URL: ?core=nes&rom=/roms/mario.nes
-    const params = new URLSearchParams(window.location.search);
-    const core = params.get('core') || 'nes';
-    const rom = params.get('rom') || '';
+<script type="text/javascript">
+  const params = new URLSearchParams(window.location.search);
+  const core = params.get('core') || 'nes';
+  const rom = params.get('rom') || '';
 
-    // EmulatorJS Configuration Variables
-    EJS_player = '#game';
-    EJS_core = core; // e.g., 'nes', 'snes', 'n64'
-    EJS_gameUrl = rom; // Path to the ROM file
-    EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/'; // CDNs hosted emulator assets
-  </script>
+  EJS_player = '#game';
+  EJS_core = core;
+  EJS_gameUrl = rom;
+  EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
+  
+  // Performance Fixes
+  EJS_threads = true;              // Enable multi-threading / WebAssembly threads
+  EJS_startOnLoaded = true;        // Skip unnecessary menu loads
+  EJS_alignFrames = true;          // Force 60 FPS frame synchronization
+</script>
   
   <!-- EmulatorJS Script Loader -->
   <script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
